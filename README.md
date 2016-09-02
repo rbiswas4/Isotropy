@@ -1,7 +1,8 @@
 # Isotropy
 
-[![Join the chat at https://gitter.im/rbiswas4/Isotropy](https://badges.gitter.im/rbiswas4/Isotropy.svg)](https://gitter.im/rbiswas4/Isotropy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-A project to investigate the requirements for constraining Isotropy of the metric at low redshifts using SNIa
+A project to investigate the requirements for constraining Isotropy of the metric at low redshifts using SNIa. If interested feel free to discuss this either in the issues or at gitter following the link:
+
+![Join the chat at https://gitter.im/rbiswas4/Isotropy](https://badges.gitter.im/rbiswas4/Isotropy.svg)
 
 ## Background
 As we all know, modern cosmology is built on the well studied model of an expanding universe. The consensus picture based on data from many surveys combined with theoretical understanding is that the universe has been expanding from early times with the rate of expansion dropping with time due to gravity, till a fairly recent time when the rate of expansion started increasing again. Understanding the physical driver for such an increase in the expansion rate (ie. accelerated expansion at late times) is one of the major goals of current and future surveys. At the largest scales, everything is mostly dominated by gravitational effects. If we assume that we understand gravitation at large scales (our most modern understanding is based on General Relativity), then such an acceleration is due to an additional component that is not found in terrestrial laborotaries: understanding the phenomology of such substances (usually called  by the name 'dark energy') is therfore oof great interest. An alternative explanation that is sometimes forwarded, is that our understanding of gravity is flawed, ie. even at large scales General Relativity is not a good description of gravity, which is an exciting possibility itself. 
@@ -15,7 +16,7 @@ It turns out that with the sky area (about half of the sky) covered by the Large
 ## What will the Project Entail ? 
 
 ### Basic Questions we will ask
-While this project has been talked about as a possibility (See the Science Book for LSST), the exact requirements for the project have not been ascertained. Thus, what we would like to do in this project is 
+While this project has been talked about as a possibility (See the [Science Book for LSST](https://www.lsst.org/sites/default/files/docs/sciencebook/SB_Whole.pdf) : Section 11.6, for example in the [Supernova Chapter](https://www.lsst.org/sites/default/files/docs/sciencebook/SB_11.pdf)), the exact requirements for the project have not been ascertained. Thus, what we would like to do in this project is 
 - Examine the possibility of how precisely such a violation of statistical isotropy at low redshifts might be constrained with the current baseline cadence of LSST. This is essentially a question of how many SN might be well observed enough to aid in determination of the expansion history in small enough patches of the sky.
 - Are there potential changes (that are not huge) that might increase the efficacy of such a study?
 
@@ -23,7 +24,7 @@ While this project has been talked about as a possibility (See the Science Book 
 
 Here is a basic plan which can be changed as we see fit:
 - LSST provides a simulation of possible observations during its ten year span. This is a realization based on extrapolation of some weather data and program called Operation Simulation (OpSim) that is used to plan observations for LSST. We have used this output and our knowledge of SNIa from previous surveys to simulate realizations of supernova observations similar to the quality expected for LSST. For example, [using SNANA for simulations](http://lsst.astro.washington.edu/simdata/SN_data/MINION/MINION_1016_10YR_MAIN_v2.tgz). We will probably have updated simulations for this project.
-- We have software that can infer model parameters given the observations of a supernova. We will use this on the simulated observations of LSST SNIa at low redshift across the sky. The basic software core is in [SNCosmo](https://github.com/sncosmo/sncosmo). We have some packages under develpment that make the job of running the fits easier eg. [analyzeSN])https://github.com/rbiswas4/sncosmo_lc_analysis) 
+- We have software that can infer model parameters given the observations of a supernova. We will use this on the simulated observations of LSST SNIa at low redshift across the sky. The basic software core is in [SNCosmo](https://github.com/sncosmo/sncosmo). We have some packages under develpment that make the job of running the fits easier eg. [analyzeSN](https://github.com/rbiswas4/sncosmo_lc_analysis) 
 - We will divide the Southern sky into a number of parts (we will vary this number).  A smaller number of parts will give us more supernova per part of the sky. Since one can average over SNIa, having more SNIa enables one to constrain the expansion rate better for smaller numbers of division. This will enable one to say with more confidence whether the expansion history match for different parts of the sky. Higher numbers of division, on the other hand can probe more modes of variation across the sky. 
 - We will use these results to study how well LSST will do in answering questions related to isotropy using supernovae
 
