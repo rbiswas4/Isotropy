@@ -1,4 +1,6 @@
 # Isotropy
+
+[![Join the chat at https://gitter.im/rbiswas4/Isotropy](https://badges.gitter.im/rbiswas4/Isotropy.svg)](https://gitter.im/rbiswas4/Isotropy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A project to investigate the requirements for constraining Isotropy of the metric at low redshifts using SNIa
 
 ## Background
