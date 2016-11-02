@@ -1,0 +1,7 @@
+sncosmo
+healpy
+pandas
+matplotlib
+seaborn
+nose
+pip
