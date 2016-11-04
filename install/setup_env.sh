@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/bin/bash -xe
 
 # store_dir is the directory where the miniconda install is placed
 export store_dir=${HOME}/store

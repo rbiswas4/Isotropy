@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/bin/bash -xe
 export PATH="${store_dir}/miniconda/bin:$PATH"
 #CHANNEL=${CHANNEL:-"http://conda.lsst.codes/sims"} # the URL to the conda channel where LSST conda packages reside
 #conda config --add channels "$CHANNEL"
