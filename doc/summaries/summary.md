@@ -1,0 +1,13 @@
+# Wed Nov  2 13:21:20 PDT 2016 (notes: RB)
+- Talked about isotropy and homogeneity : the `Statistical` part of the definition is important 
+- What is the distance scale over which things become homogeneous. ~ 30-100 Mpc. What is an Mpc (Mega Parsec)? Can we try answering that question using astropy and wikipedia?
+- Similarly, angular cones will have a minimal size beyond which we isotropy will not hold
+- Also briefly discussed the question of parameter estimation, Central Litmit Theorem, larger number of samples.
+- Installation : 
+    - cloned the repository onto the lab computer in the directory `$HOME/project`. Note that `$HOME` is an environment variable that points to the default user directory of the user. It is often of the form `/Users/username/` or `Home/username`. The cloning was done by copying the repository url from the github clone button and then going to a `project` directory on the computer using `cd project` after making the directory with `mkdir project`. The actual clone was done using `git clone https://github.com/rbiswas4/Isotropy.git` 
+    - On the lab computers we changed the shell to `bash`  by just typing out `bash` because we could not get `chsh` to work. This means we will have to do this everytime we log in. Or maybe David will add a cshr script
+    - From the top level directory of the project, within a `bash` shell, we sourced  `./install/setup_envs.sh` and then ran the scripts `./install/install_miniconda.sh` to install the latest miniconda distribution to $HOME/store.
+   - Again making sure  `./install/setup_envs.sh` was run to create the environment variables, we ran `install/conda_install_dep.sh` to install our dependencies.
+    - Opened a Jupyter Notebook to see that we could import healpy, astropy, sncosmo.
+    - realized that I had made a mistake, should have first forked the github repository and then cloned from there. So, we fixed that by forking the repository using the fork button on github, and adding the remote location `mine` pointing to the forked repository using `git remote add mine repository_url` where `repository_url` is the url for the forked repository.
+   - `git push mine`, or `git put mine master` (because we did not change the branch) pushed the repository to github. We can see the results that were uploaded [here](https://github.com/meramanjar/Isotropy/blob/master/doc/esmeralda/Isotropy.ipynb) and [here](https://github.com/Maddic9/Isotropy/blob/master/doc/Maddi/Isotropy%201.ipynb).
