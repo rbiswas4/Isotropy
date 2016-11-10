@@ -1,0 +1,3 @@
+[submodule "AnalyzeSN"]
+	path = AnalyzeSN
+	url = https://github.com/djreiss/AnalyzeSN.git
