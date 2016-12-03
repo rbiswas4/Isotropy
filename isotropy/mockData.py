@@ -38,6 +38,10 @@ def read_mockDataPickle(fname, filterBadPoints=True, selectCols=('z', 'mu', 'mu_
         Whether to filter bad data points
     selectCols  : tuple of strings, defaults to ('z', 'mu', 'mu_var')
         tuple of column names to keep
+
+    Return
+    ------
+    tuple of dataframe, and total number of SN before any cuts were applied
     """
     if sys.version.startswith('2'):
         snFits = pickle.load(gzip.GzipFile(fname))
@@ -77,7 +81,8 @@ def binnedDescStat(mockDataFrame,
 
     Returns
     -------
-    dataFrame
+    dataFrame with index = binindex, mean(mu_err), std(mu_err) with rows
+        dropped if some of these quantities were nans
     """
     # Since we will be modifying the dataframe, create copy
     df  = mockDataFrame.copy(deep=True)
@@ -121,6 +126,11 @@ def drawSamples(data, numSN, totalSN, rng, binwidth=0.1, minz=0., cosmo=Planck15
         min redshift used in the data
     cosmo : instance of cosmological models in astropy.cosmology, defaults to Planck15
         cosmological model used to obtain the uncertainties in distance modulus
+
+    Return
+    ------
+    `pd.DataFrame` with columns of z, mu, mu_err of numbers numSN (though rows
+    get dropped due to selection effects)
     """
     data['frequency'] = data['count'] / np.float(totalSN)
     data['numexpected'] = np.round(data['frequency'].values * numSN).astype(np.int)
