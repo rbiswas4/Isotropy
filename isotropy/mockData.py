@@ -22,7 +22,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
-__all__ = ['read_mockDataPickle']
+__all__ = ['read_mockDataPickle', 'binnedDescStat']
 
 def read_mockDataPickle(fname, filterBadPoints=True, selectCols=('z', 'mu', 'mu_var')):
     """
@@ -50,4 +50,38 @@ def read_mockDataPickle(fname, filterBadPoints=True, selectCols=('z', 'mu', 'mu_
     if selectCols is not None:
         df = df[list(selectCols)].astype(np.float)
     return df
+
+def binnedDescStat(mockDataFrame,
+                                binningCol='z',
+                                varColumn='mu_err',
+                                outlier_rejection_query='mu_err < 5.0',
+                                statisticsTuple=('count', np.mean, np.std),
+                                binwidth=0.1):
+    """
+    bin an input dataFrame with columns of `z` and `mu_var` in uniform redshift
+    bins of width 0.1, rejecting outliers in `mu_var` via a simple prescription
+    described below. Return descriptive statistics of the uncertainties in
+    distance modulus in each bin in the form of a mean and standard deviation of
+    a Gaussian.
+    """
+    # Since we will be modifying the dataframe, create copy
+    df  = mockDataFrame.copy(deep=True)
+
+    # keep only those records that pass the outlier rejection query
+    df = df.query(outlier_rejection_query)
+
+    # Add required columns to mockDataFrame 
+    df['binindex'] = df['z'] // binwidth
+    df.binindex = df.binindex.astype(int)
+
+    # Bin using groupby and aggregate to find descriptive statistics
+    grouped = df.groupby('binindex') 
+
+    # statistics of interest : How do we calculate them from columns of
+    # dataframe. In this case, we use a single column of the dataframe 'mu_err'
+    # and calculate three statistics provided in a tuple
+    statisticsDict = dict(mu_err=statisticsTuple)
+
+    # aggregate on the grouped object to obtain the statistics in each bin
+    return grouped.agg(statisticsDict)
 
