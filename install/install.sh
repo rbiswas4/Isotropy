@@ -15,11 +15,11 @@ then
     echo "Install everything from scratch"
     source ./install/setup_env.sh
     ./install/install_miniconda.sh
-    ./install/conda_install_deps.sh
-    ./install/pip_install_deps.sh
+    ./install/conda_install_dep.sh
+    ./install/pip_install_dep.sh
 else
     echo "Install only dependencies"
     source ./install/setup_env.sh
-    ./install/conda_install_deps.sh
-    ./install/pip_install_deps.sh
+    ./install/conda_install_dep.sh
+    ./install/pip_install_dep.sh
 fi
