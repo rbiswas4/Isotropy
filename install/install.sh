@@ -22,4 +22,4 @@ else
     source ./install/setup_env.sh
     ./install/conda_install_deps.sh
     ./install/pip_install_deps.sh
-
+fi
