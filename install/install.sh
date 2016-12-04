@@ -7,7 +7,7 @@ if [[ $# -gt 0 ]]
 then
     opt=$1
 else
-    opt='default'
+    opt='all'
 fi
 echo "install script started with arguments "$opt
 if [ $opt == 'all' ]
